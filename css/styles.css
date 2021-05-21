@@ -11,6 +11,10 @@ body {
     margin: 0 50px;
 }
 
+#score{
+    margin-top: 50px;
+}
+
 main{
     display: flex;
     flex-direction: column;
@@ -38,14 +42,24 @@ article {
 }
 
 .bluebtn{
-    width: 100%;
-    height: 50px;
-    background: #022851;
-    color: white;
-    border-radius: 30px;
-    margin: 30px 0;
+    background-color: #022851;
+	border-radius: 28px;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+    text-align: center;
     text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
-    display:inline-block;
+	font-size: 17px;
+	padding: 16px 0;
+    width: 100%;
+	text-decoration: none;
+    margin: 30px 0;
+}
+
+.options{
+    margin-top: 20px;
+}
+
+.option{
+    margin: 7px 0;
 }

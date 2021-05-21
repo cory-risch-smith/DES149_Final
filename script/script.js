@@ -1,13 +1,15 @@
-const playNow = document.getElementById('playNow'),
-  start = document.getElementById('start');
+// const playNow = document.getElementById('playNow');
+// const start = document.getElementById('start');
 
-playNow.addEventListener('click', function(){
-  document.location.href =
-    'https://cory-risch-smith.github.io/DES149_Final/directions.html';
-});
+// playNow.addEventListener('click', function(){
+//   document.location.href =
+//     'https://cory-risch-smith.github.io/DES149_Final/src/directions.html';
+
+//   // var start = document.getElementById('start');
+// });
 
 
-start.addEventListener('click', function(){
-  document.location.href =
-     'https://cory-risch-smith.github.io/DES149_Final/game.html';
-});
+// start.addEventListener('click', function(){
+//   document.location.href =
+//      'https://cory-risch-smith.github.io/DES149_Final/src/game.html';
+// });

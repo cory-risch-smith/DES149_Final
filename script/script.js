@@ -1,7 +1,7 @@
 const playNow = document.getElementById('playNow'),
   start = document.getElementById('start');
 
-playNow.addEventListener()
+playNow.onclick(directions());
 
 function directions() {
   document.location.href =

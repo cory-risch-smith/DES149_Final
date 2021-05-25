@@ -23,6 +23,14 @@ main{
     height: 100%;
 }
 
+.maingame{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+
 h1, h2 {
     color: #022851;
     text-align: center;
@@ -62,4 +70,11 @@ article {
 
 .option{
     margin: 7px 0;
+}
+
+
+/* Overlays */
+
+#message{
+    text-transform: uppercase;
 }

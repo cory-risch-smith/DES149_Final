@@ -7,24 +7,36 @@
     <title>Play Game</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../css/styles.css">
-    <!-- <script src="../script/script.js" defer></script> -->
+    <script src="../script/script.js" defer></script>
 </head>
 <body>
     <header>
-        <h4 id="score">Score: 10</h4>
+        <h4 id="score">Score: 0</h4>
     </header>
     <main>
-        <img src="https://picsum.photos/300/200" alt="">
-
-        <div>
-            <h3>Please select one of the following:</h3>
+        <div id="maingame">
+            <img id="game-image" src="https://picsum.photos/300/200" alt="">
+        
+            <h3 id="question">Some placeholder question</h3>
             <div class="options">
                 <a id="option-a" class="bluebtn option">A. Some text</a>
                 <a id="option-b" class="bluebtn option">B. Some other text</a>
                 <a id="option-c" class="bluebtn option">C. Some more text</a>
                 <a id="option-d" class="bluebtn option">D. Some other more text</a>
+                <a id="option-e" class="bluebtn option">D. Some other more other text</a>
             </div>
         </div>
+        <div id="overlay" class="overlay hidden">
+            <img id="overlay-image" src="https://picsum.photos/300/200" alt="">
+        
+            <h1 id="message"></h1>
+            <h3 id="correct-answer"></h3>
+
+            <p id="overlay-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, nulla! Excepturi dolorum quo ratione deserunt consectetur sunt consequuntur! Officiis soluta adipisci repudiandae fugiat labore aliquam sequi nulla assumenda eligendi eos.
+            </p> 
+            <button id="nextPage">Next</button>
+        </div>
+
     </main>
 
 </body>

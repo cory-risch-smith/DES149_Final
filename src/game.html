@@ -1,48 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Play Game</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
     <script src="../script/script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <div id="overlayBackground"></div>
-    
+
     <header>
-        <h4 id="score">Score: 0</h4>
+      <h4 id="score">Score: 0</h4>
     </header>
 
     <main>
-        <div id="maingame">
-            <img id="game-image" src="https://picsum.photos/300/200" alt="">
-        
-            <h3 id="question">Some placeholder question</h3>
-            <div class="options">
-                <a id="option-a" class="bluebtn option">A. Some text</a>
-                <a id="option-b" class="bluebtn option">B. Some other text</a>
-                <a id="option-c" class="bluebtn option">C. Some more text</a>
-                <a id="option-d" class="bluebtn option">D. Some other more text</a>
-                <a id="option-e" class="bluebtn option">D. Some other more other text</a>
-            </div>
+      <div id="maingame">
+        <img id="game-image" src="https://picsum.photos/300/200" alt="" />
+
+        <h3 id="question">Some placeholder question</h3>
+        <div class="options">
+          <a id="option-a" class="bluebtn option">A. Some text</a>
+          <a id="option-b" class="bluebtn option">B. Some other text</a>
+          <a id="option-c" class="bluebtn option">C. Some more text</a>
+          <a id="option-d" class="bluebtn option">D. Some other more text</a>
+          <a id="option-e" class="bluebtn option"
+            >D. Some other more other text</a
+          >
         </div>
+      </div>
 
-        <div id="overlay" class="overlay hidden">
-            <img id="overlay-image" src="https://picsum.photos/300/200" alt="">
-        
-            <h1 id="message"></h1>
-            <p id="overlay-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, nulla! Excepturi dolorum quo ratione deserunt consectetur sunt consequuntur! Officiis soluta adipisci repudiandae fugiat labore aliquam sequi nulla assumenda eligendi eos.
-            </p> 
+      <div id="overlay" class="overlay hidden">
+        <img id="overlay-image" src="https://picsum.photos/300/200" alt="" />
 
-            <h3 id="correct-answer"></h3>
+        <h1 id="message"></h1>
+        <p id="overlay-text">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque,
+          nulla! Excepturi dolorum quo ratione deserunt consectetur sunt
+          consequuntur! Officiis soluta adipisci repudiandae fugiat labore
+          aliquam sequi nulla assumenda eligendi eos.
+        </p>
 
-            <a id="nextPage" class="bluebtn">Next</a>
-        </div>
+        <h3 id="correct-answer"></h3>
 
+        <a id="nextPage" class="bluebtn">Next</a>
+      </div>
+
+      <!-- Possible Hidden overlay with different buttons for start game. We will have to adjust JS file to restart on button clicks -->
+
+      <!-- <div id="overlay" class="overlay hidden">
+        <img id="overlay-image" src="https://picsum.photos/300/200" alt="" />
+
+        <h1 id="message"></h1>
+        <p id="overlay-text">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque,
+          nulla! Excepturi dolorum quo ratione deserunt consectetur sunt
+          consequuntur! Officiis soluta adipisci repudiandae fugiat labore
+          aliquam sequi nulla assumenda eligendi eos.
+        </p>
+
+        <a id="end" class="">END</a>
+
+        <a id="nextPage" class="bluebtn">START</a>
+      </div> -->
     </main>
-
-</body>
+  </body>
 </html>

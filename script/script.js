@@ -22,6 +22,9 @@ const correctAnswer = document.getElementById('correct-answer');
 const overlayBg = document.getElementById('overlayBackground');
 // var options = document.getElementsByClassName('option');
 
+const endBtn = document.getElementById('endBtn');
+const restartBtn = document.getElementById('restartBtn');
+
 const game = [
   {
     image: 'https://picsum.photos/300/200',
@@ -122,6 +125,12 @@ function endGame() {
   overlayText.textContent = `Congratulations, you scored ${score} points! Would you like to play again?`;
 
   //   Add start and end buttons that refresh game
+  endBtn.addEventListener('click', function () {
+    window.location.reload();
+  });
+  restartBtn.addEventListener('click', function () {
+    window.location.reload();
+  });
 }
 
 function pageDisplay(pageIndex) {

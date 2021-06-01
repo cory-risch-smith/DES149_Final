@@ -22,6 +22,8 @@ const correctAnswer = document.getElementById('correct-answer');
 const overlayBg = document.getElementById('overlayBackground');
 // var options = document.getElementsByClassName('option');
 
+const optionsElement = document.getElementById('options');
+
 const endBtn = document.getElementById('endBtn');
 const restartBtn = document.getElementById('restartBtn');
 
@@ -60,19 +62,57 @@ const game = [
   },
 ];
 
-var score = -1;
-
+var score = 0;
 var i = 0;
 
 overlayMessage.style.display = 'none';
 
-function playGame() {
-  //Question 1
+resetState();
+pageDisplay(i);
 
-  for (let option of document.getElementsByClassName('option')) {
-    option.addEventListener('click', function () {
-      console.log('Option clicked');
-      if (this.textContent === game[i].correctAns) {
+// when next is clicked, increment i and display the new page.
+nextPage.addEventListener('click', function() {
+    overlayMessage.style.display = 'none';
+    maingame.style.display = 'flex';
+    if (i == game.length - 1) {
+        endGame();
+        return;
+    }
+    i++;
+    resetState();
+    pageDisplay(i);
+});
+// }
+
+function resetState() {
+    while (optionsElement.firstChild) {
+        optionsElement.removeChild(optionsElement.firstChild);
+    }
+}
+
+function pageDisplay(pageIndex) {
+  overlayBg.style.display = 'none';
+  gameImage.setAttribute('src', game[pageIndex].image);
+  question.textContent = game[pageIndex].question;
+
+  game[i].options.forEach(option => {
+      const button = document.createElement('a');
+      button.innerText = option;
+      button.classList.add('option');
+      button.classList.add('bluebtn');
+      button.id = option;
+      button.addEventListener('click', checkAnswer);
+      optionsElement.appendChild(button);
+  });
+}
+
+
+function checkAnswer(e) {
+    // console.log("BTN CLICKED = ", e.target.id);
+    if(game[i].correctAns === e.target.id) {
+        score++;
+        console.log("correct!! Score = ", score);
+
         //Turn on Success overlay
         maingame.style.display = 'none';
         overlayMessage.style.display = 'flex';
@@ -81,7 +121,10 @@ function playGame() {
         message.style.color = 'green';
         overlayText.textContent = 'You are great! No studying for you!';
         correctAnswer.textContent = `The correct LATCH principle is ${game[i].correctAns}.`;
-      } else {
+        scoreLabel.textContent = `Score: ${score}`;
+    } else {
+        console.log("Wrong! Score = ", score);
+
         // Turn on failure overlay
         maingame.style.display = 'none';
         overlayMessage.style.display = 'flex';
@@ -91,58 +134,32 @@ function playGame() {
         correctAnswer.textContent = `The correct LATCH principle is ${game[i].correctAns}.`;
         overlayText.textContent = 'You are so close, please go study more.';
         scoreLabel.textContent = `Score: ${score}`;
-      }
-    });
-    if (option.textContent === game[i].correctAns) {
-      score++;
-      scoreLabel.textContent = `Score: ${score}`;
     }
-  }
-
-  // when proceed is clicked, increment i and display the new page.
-  nextPage.addEventListener('click', function () {
-    overlayMessage.style.display = 'none';
-    maingame.style.display = 'flex';
-    if (i == game.length - 1) {
-      endGame();
-      //Where we call end of game page.
-    }
-    i++;
-    pageDisplay(i);
-    playGame();
-  });
 }
 
 function endGame() {
-  maingame.style.display = 'none';
-  overlayMessage.style.display = 'flex';
-  overlayBg.style.display = 'block';
-  scoreLabel.textContent = `Score: ${score}`;
+    console.log('GAME ENDED');
 
-  //Message
-  message.textContent = 'GAME OVER!';
-  message.style.color = 'orange';
-  overlayText.textContent = `Congratulations, you scored ${score} points! Would you like to play again?`;
+    //Turn on Game over overlay
+    maingame.style.display = 'none';
+    overlayMessage.style.display = 'flex';
+    overlayBg.style.display = 'block';
+    message.textContent = 'Game Over';
+    message.style.color = 'yellow';
+    overlayText.textContent = `Good job! Your score is ${score}`;
+    correctAnswer.style.display = 'none';
+    scoreLabel.textContent = `Score: ${score}`;
 
-  //   Add start and end buttons that refresh game
-  endBtn.addEventListener('click', function () {
-    window.location.reload();
-  });
-  restartBtn.addEventListener('click', function () {
-    window.location.reload();
-  });
+    // Remove the next button and replace it with a 'Play Again' button
+    nextPage.style.display = 'none';
+
+    const playAgainButton = document.createElement('a');
+    playAgainButton.innerText = 'Play Again';
+    playAgainButton.classList.add('bluebtn');
+    playAgainButton.id = 'playAgain';
+    playAgainButton.addEventListener('click', function() {
+        // window.NavigationPreloadManager()
+        console.log("Page reload");
+    });
+    optionsElement.appendChild(playAgainButton);
 }
-
-function pageDisplay(pageIndex) {
-  overlayBg.style.display = 'none';
-  gameImage.setAttribute('src', game[pageIndex].image);
-  question.textContent = game[pageIndex].question;
-  optionA.textContent = game[pageIndex].options[0];
-  optionB.textContent = game[pageIndex].options[1];
-  optionC.textContent = game[pageIndex].options[2];
-  optionD.textContent = game[pageIndex].options[3];
-  optionE.textContent = game[pageIndex].options[4];
-}
-
-pageDisplay(i);
-playGame();

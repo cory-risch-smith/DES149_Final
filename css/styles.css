@@ -11,7 +11,7 @@ body {
     margin: 0 50px;
 }
 
-#score{
+header{
     margin-top: 50px;
 }
 
@@ -23,7 +23,7 @@ main{
     height: 100%;
 }
 
-.maingame{
+#maingame{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,4 +77,42 @@ article {
 
 #message{
     text-transform: uppercase;
+    font-size: 26px;
+}
+
+#overlayBackground{
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+.overlay{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding: 20px;
+    z-index: 1;
+    border-radius: 8px;
+}
+
+#nextPage{
+    width: 80%;
+    margin: 0;
+    margin-top: 30px;
+}
+
+h3#correct-answer {
+    margin: 15px auto;
+    margin-top: 40px;
+    width: 83%;
 }

@@ -5,23 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Play Game</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css" />
     <script src="../script/script.js" defer></script>
   </head>
   <body>
     <div id="overlayBackground"></div>
 
-    <header>
-      <h4 id="score">Score: 0</h4>
-    </header>
-
     <main>
       <div id="maingame">
-        <img id="game-image" src="https://picsum.photos/300/200" alt="" />
+        <h4 id="score">Score: 0</h4>
+
+        <img id="game-image" src="../images/Optimized-img1.jpg" alt="" />
 
         <h3 id="question">Some placeholder question</h3>
         <div id="options" class="options">
@@ -29,14 +26,12 @@
           <a id="option-b" class="bluebtn option">B. Some other text</a>
           <a id="option-c" class="bluebtn option">C. Some more text</a>
           <a id="option-d" class="bluebtn option">D. Some other more text</a>
-          <a id="option-e" class="bluebtn option"
-            >D. Some other more other text</a
-          >
+          <a id="option-e" class="bluebtn option">E. Some other more other text</a>
         </div>
       </div>
 
       <div id="overlay" class="overlay hidden">
-        <img id="overlay-image" src="https://picsum.photos/300/200" alt="" />
+        <img id="overlay-image" src="../images/Optimized-img1.jpg" alt="" />
 
         <h1 id="message"></h1>
         <p id="overlay-text">
@@ -50,24 +45,6 @@
 
         <a id="nextPage" class="bluebtn">Next</a>
       </div>
-
-      <!-- Possible Hidden overlay with different buttons for start game. We will have to adjust JS file to restart on button clicks -->
-
-      <!-- <div id="overlay" class="overlay hidden">
-        <img id="overlay-image" src="https://picsum.photos/300/200" alt="" />
-
-        <h1 id="message"></h1>
-        <p id="overlay-text">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque,
-          nulla! Excepturi dolorum quo ratione deserunt consectetur sunt
-          consequuntur! Officiis soluta adipisci repudiandae fugiat labore
-          aliquam sequi nulla assumenda eligendi eos.
-        </p>
-
-        <a id="endBtn">END</a>
-
-        <a id="restartBtn">RESTART</a>
-      </div> -->
     </main>
   </body>
 </html>

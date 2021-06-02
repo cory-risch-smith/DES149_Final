@@ -1,9 +1,6 @@
 //To-Do:
-// 1. Debug Score
-// 2. Fix weird styling
-// 3. Populate game array objects with Kinu's stuff
-// 4. Style Overlay
-// 5. Game end screen
+// 1. Populate game array objects with Kinu's stuff
+// 2. Test on chrome and safari 
 
 const optionA = document.getElementById('option-a');
 const optionB = document.getElementById('option-b');
@@ -20,6 +17,7 @@ const message = document.getElementById('message');
 const overlayText = document.getElementById('overlay-text');
 const correctAnswer = document.getElementById('correct-answer');
 const overlayBg = document.getElementById('overlayBackground');
+const overlayImg = document.getElementById('overlay-image');
 // var options = document.getElementsByClassName('option');
 
 const optionsElement = document.getElementById('options');
@@ -29,14 +27,14 @@ const restartBtn = document.getElementById('restartBtn');
 
 const game = [
   {
-    image: 'https://picsum.photos/300/200',
+    image: '../images/Optimized-img1.jpg',
     question: 'What do you want to do today?',
     options: ['location', 'alphabet', 'time', 'category', 'hierarchy'],
     correctAns: 'location',
   },
 
   {
-    image: 'https://picsum.photos/300/200',
+    image: '../images/Optimized-img2.jpg',
     question: 'This is question 2',
     options: [
       'location and hierarchy',
@@ -49,7 +47,55 @@ const game = [
   },
 
   {
-    image: 'https://picsum.photos/300/200',
+    image: '../images/Optimized-img3.jpg',
+    question: 'How many elephants are in this pic?',
+    options: [
+      'location and hierarchy',
+      'alphabet',
+      'time',
+      'category',
+      'just hierarchy',
+    ],
+    correctAns: 'time',
+  },
+  {
+    image: '../images/Optimized-img4.jpg',
+    question: 'How many elephants are in this pic?',
+    options: [
+      'location and hierarchy',
+      'alphabet',
+      'time',
+      'category',
+      'just hierarchy',
+    ],
+    correctAns: 'time',
+  },
+  {
+    image: '../images/Optimized-img5.jpg',
+    question: 'How many elephants are in this pic?',
+    options: [
+      'location and hierarchy',
+      'alphabet',
+      'time',
+      'category',
+      'just hierarchy',
+    ],
+    correctAns: 'time',
+  },
+  {
+    image: '../images/Optimized-img6.jpg',
+    question: 'How many elephants are in this pic?',
+    options: [
+      'location and hierarchy',
+      'alphabet',
+      'time',
+      'category',
+      'just hierarchy',
+    ],
+    correctAns: 'time',
+  },
+  {
+    image: '../images/Optimized-img7.jpg',
     question: 'How many elephants are in this pic?',
     options: [
       'location and hierarchy',
@@ -108,7 +154,7 @@ function pageDisplay(pageIndex) {
 
 
 function checkAnswer(e) {
-    // console.log("BTN CLICKED = ", e.target.id);
+    overlayImg.setAttribute('src', game[i].image);
     if(game[i].correctAns === e.target.id) {
         score++;
         console.log("correct!! Score = ", score);
@@ -145,7 +191,7 @@ function endGame() {
     overlayMessage.style.display = 'flex';
     overlayBg.style.display = 'block';
     message.textContent = 'Game Over';
-    message.style.color = 'yellow';
+    message.style.color = '#f3b500';
     overlayText.textContent = `Good job! Your score is ${score}`;
     correctAnswer.style.display = 'none';
     scoreLabel.textContent = `Score: ${score}`;
@@ -158,8 +204,7 @@ function endGame() {
     playAgainButton.classList.add('bluebtn');
     playAgainButton.id = 'playAgain';
     playAgainButton.addEventListener('click', function() {
-        // window.NavigationPreloadManager()
-        console.log("Page reload");
+        location.reload();
     });
-    optionsElement.appendChild(playAgainButton);
+    overlayMessage.appendChild(playAgainButton);
 }

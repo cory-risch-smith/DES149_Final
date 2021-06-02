@@ -72,7 +72,7 @@ const game = [
   {
     location: 'Tercero',
     image: '../images/Optimized-img5.jpg',
-    question: 'Which LATCH principle is most primarily utilized?',
+    question: 'Which LATCH principle is primarily utilized?',
     options: [
       'Location',
       'Alphabet',

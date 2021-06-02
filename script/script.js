@@ -192,6 +192,7 @@ function endGame() {
     //Turn on Game over overlay
     maingame.style.display = 'none';
     overlayMessage.style.display = 'flex';
+    overlayImg.style.display = 'none';
     overlayBg.style.display = 'block';
     message.textContent = 'Game Over';
     message.style.color = '#f3b500';

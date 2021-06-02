@@ -2,11 +2,6 @@
 // 1. Populate game array objects with Kinu's stuff
 // 2. Test on chrome and safari 
 
-const optionA = document.getElementById('option-a');
-const optionB = document.getElementById('option-b');
-const optionC = document.getElementById('option-c');
-const optionD = document.getElementById('option-d');
-const optionE = document.getElementById('option-e');
 const gameImage = document.getElementById('game-image');
 const question = document.getElementById('question');
 const overlayMessage = document.getElementById('overlay');
@@ -18,7 +13,7 @@ const overlayText = document.getElementById('overlay-text');
 const correctAnswer = document.getElementById('correct-answer');
 const overlayBg = document.getElementById('overlayBackground');
 const overlayImg = document.getElementById('overlay-image');
-// var options = document.getElementsByClassName('option');
+const locationLabel = document.getElementById('location');
 
 const optionsElement = document.getElementById('options');
 
@@ -27,84 +22,91 @@ const restartBtn = document.getElementById('restartBtn');
 
 const game = [
   {
+    location: 'The Quad',
     image: '../images/Optimized-img1.jpg',
-    question: 'What do you want to do today?',
-    options: ['location', 'alphabet', 'time', 'category', 'hierarchy'],
-    correctAns: 'location',
+    question: 'Which LATCH principle is primarily utilized?',
+    options: ['Location', 'Alphabet', 'Time', 'Category', 'Hierarchy'],
+    correctAns: 'Category',
   },
 
   {
+    location: 'Latitude Cafe',
     image: '../images/Optimized-img2.jpg',
-    question: 'This is question 2',
+    question: 'What design principle(s) does this sign implement well?',
     options: [
-      'location and hierarchy',
-      'alphabet',
-      'time',
-      'category',
-      'just hierarchy',
+      'Unified Color Palette',
+      'Text Hierarchy',
+      'Spacing',
+      'All of the above',
+      'None of the above',
     ],
-    correctAns: 'alphabet',
+    correctAns: 'All of the above',
   },
 
   {
+    location: 'Sciences Laboratory',
     image: '../images/Optimized-img3.jpg',
-    question: 'How many elephants are in this pic?',
+    question: 'What design principle(s) does this sign implement well?',
     options: [
-      'location and hierarchy',
-      'alphabet',
-      'time',
-      'category',
-      'just hierarchy',
+      'Simple Color Palette',
+      'Relevant Imagery',
+      'Text Hierarchy',
+      'Good Title',
+      'All of the above',
     ],
-    correctAns: 'time',
+    correctAns: 'All of the above',
   },
   {
+    location: 'Segundo',
     image: '../images/Optimized-img4.jpg',
-    question: 'How many elephants are in this pic?',
+    question: 'Which LATCH principle is primarily utilized?',
     options: [
-      'location and hierarchy',
-      'alphabet',
-      'time',
-      'category',
-      'just hierarchy',
+      'Location',
+      'Alphabet',
+      'Time',
+      'Category',
+      'Hierarchy',
     ],
-    correctAns: 'time',
+    correctAns: 'Location',
   },
   {
+    location: 'Tercero',
     image: '../images/Optimized-img5.jpg',
-    question: 'How many elephants are in this pic?',
+    question: 'Which LATCH principle is most primarily utilized?',
     options: [
-      'location and hierarchy',
-      'alphabet',
-      'time',
-      'category',
-      'just hierarchy',
+      'Location',
+      'Alphabet',
+      'Time',
+      'Category',
+      'Hierarchy',
     ],
-    correctAns: 'time',
+    correctAns: 'Location',
   },
   {
-    image: '../images/Optimized-img6.jpg',
-    question: 'How many elephants are in this pic?',
-    options: [
-      'location and hierarchy',
-      'alphabet',
-      'time',
-      'category',
-      'just hierarchy',
-    ],
-    correctAns: 'time',
-  },
-  {
+    location: 'Cuarto',
     image: '../images/Optimized-img7.jpg',
-    question: 'How many elephants are in this pic?',
+    question: 'What information design aspect could be altered to improve this poster?',
     options: [
-      'location and hierarchy',
-      'alphabet',
-      'time',
-      'category',
-      'just hierarchy',
+      'More Imagery',
+      'Brighter Colors',
+      'Stronger Text Hierarchy',
+      'Both A and B',
+      'None of the above',
     ],
-    correctAns: 'time',
+    correctAns: 'Stronger Text Hierarchy',
+  },
+  {
+    location: 'Tercero',
+    image: '../images/Optimized-img8.jpg',
+    question: 'What design principle(s) does this sign implement well?',
+    options: [
+      'Text Hierarchy',
+      'Simple Color Palette',
+      'Comprehensive Charts',
+      'Both A and B',
+      'None of the above',
+    ],
+    correctAns: 'Both A and B',
   },
 ];
 
@@ -137,6 +139,7 @@ function resetState() {
 }
 
 function pageDisplay(pageIndex) {
+  locationLabel.textContent = game[pageIndex].location;
   overlayBg.style.display = 'none';
   gameImage.setAttribute('src', game[pageIndex].image);
   question.textContent = game[pageIndex].question;
@@ -165,7 +168,7 @@ function checkAnswer(e) {
         overlayBg.style.display = 'block';
         message.textContent = 'Congratulations!';
         message.style.color = 'green';
-        overlayText.textContent = 'You are great! No studying for you!';
+        overlayText.textContent = 'Great job! You\'re an information design pro!';
         correctAnswer.textContent = `The correct LATCH principle is ${game[i].correctAns}.`;
         scoreLabel.textContent = `Score: ${score}`;
     } else {
@@ -178,7 +181,7 @@ function checkAnswer(e) {
         message.textContent = 'Wrong answer, please try again!';
         message.style.color = 'red';
         correctAnswer.textContent = `The correct LATCH principle is ${game[i].correctAns}.`;
-        overlayText.textContent = 'You are so close, please go study more.';
+        overlayText.textContent = 'Keep revising your information design concepts!';
         scoreLabel.textContent = `Score: ${score}`;
     }
 }
@@ -192,7 +195,7 @@ function endGame() {
     overlayBg.style.display = 'block';
     message.textContent = 'Game Over';
     message.style.color = '#f3b500';
-    overlayText.textContent = `Good job! Your score is ${score}`;
+    overlayText.textContent = `Good job! You have completed all the flashcards. Your final score is ${score}.`;
     correctAnswer.style.display = 'none';
     scoreLabel.textContent = `Score: ${score}`;
 

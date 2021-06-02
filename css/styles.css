@@ -24,6 +24,11 @@ main{
     height: 100%;
 }
 
+.iconcontainer{
+    display: flex;
+    align-items: flex-end;
+}
+
 #maingame{
     display: flex;
     flex-direction: column;
@@ -34,11 +39,11 @@ main{
 
 img{
     width: 250px;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 #score{
-    margin: 12px 0;
+    margin: 15px 0;
 }
 
 h1, h2 {
@@ -66,7 +71,6 @@ article {
 	cursor: pointer;
 	color: #ffffff;
     text-align: center;
-    text-transform: uppercase;
 	font-size: 17px;
 	padding: 16px 0;
     width: 100%;
@@ -121,8 +125,16 @@ article {
     margin-top: 30px;
 }
 
-h3#correct-answer {
+h3#correct-answer, #overlay-text {
     margin: 15px auto;
     margin-top: 40px;
     width: 83%;
+}
+
+#overlay-text{
+    margin: 0;
+}
+
+#question{
+    width: 95%;
 }

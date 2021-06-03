@@ -91,7 +91,7 @@ article {
 
 #message{
     text-transform: uppercase;
-    font-size: 26px;
+    font-size: 24px;
 }
 
 #overlayBackground{
@@ -114,7 +114,7 @@ article {
     justify-content: center;
     align-items: center;
     width: 80%;
-    padding: 20px;
+    padding: 15px;
     z-index: 1;
     border-radius: 8px;
 }
@@ -132,6 +132,10 @@ h3#correct-answer, #overlay-text {
 
 #overlay-text{
     margin: 0;
+}
+
+#overlay-image{
+    width: 180px;
 }
 
 #question{

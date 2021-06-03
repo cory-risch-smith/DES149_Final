@@ -169,7 +169,7 @@ function checkAnswer(e) {
         message.textContent = 'Congratulations!';
         message.style.color = 'green';
         overlayText.textContent = 'Great job! You\'re an information design pro!';
-        correctAnswer.textContent = `The correct LATCH principle is ${game[i].correctAns}.`;
+        correctAnswer.textContent = `The correct answer is ${game[i].correctAns}.`;
         scoreLabel.textContent = `Score: ${score}`;
     } else {
         console.log("Wrong! Score = ", score);
@@ -180,7 +180,7 @@ function checkAnswer(e) {
         overlayBg.style.display = 'block';
         message.textContent = 'Wrong answer, please try again!';
         message.style.color = 'red';
-        correctAnswer.textContent = `The correct LATCH principle is ${game[i].correctAns}.`;
+        correctAnswer.textContent = `The correct answer is ${game[i].correctAns}.`;
         overlayText.textContent = 'Keep revising your information design concepts!';
         scoreLabel.textContent = `Score: ${score}`;
     }

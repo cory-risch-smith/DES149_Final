@@ -122,12 +122,11 @@ article {
 #nextPage{
     width: 80%;
     margin: 0;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 h3#correct-answer, #overlay-text {
     margin: 15px auto;
-    margin-top: 40px;
     width: 83%;
 }
 
